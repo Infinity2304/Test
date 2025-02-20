@@ -96,6 +96,7 @@ public class FormHandler {
         div.get(0).click();
         System.out.println("div select done");
         elements.continue_btn().click();
+        utils.sleepQuietly(1000);
     }
     //Can be used for clearing input field 
     public void clear_field(WebElement field){

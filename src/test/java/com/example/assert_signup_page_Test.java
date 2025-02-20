@@ -56,6 +56,7 @@ public class assert_signup_page_Test {
         driver.quit();
     }
     
+    @Test
     public void test03(){
         driver.get("https://test.logiqids.com/sign-up");
         driver.manage().window().maximize();
