@@ -35,7 +35,7 @@ public class FormHandler {
         elements.Signup_verify_btn().click();
     }
 
-    public void child_details_filler(String child, String city, String school){
+    public void child_details_filler_non_partner(String child, String city, String school){
         elements.Signup_child_name().sendKeys(child);
         System.out.println("child done");
         elements.Signup_city_name().sendKeys(city);
@@ -52,7 +52,51 @@ public class FormHandler {
         System.out.println("grade select done");
         elements.continue_btn().click();
     }
+    
+    public void child_details_filler_optional_partner(String child, String city, String school){
+        elements.Signup_child_name().sendKeys(child);
+        System.out.println("child done");
+        elements.Signup_city_name().sendKeys(city);
+        System.out.println("city done");
+        elements.Signup_title().click();
+        elements.Signup_school_name().click();
+        System.out.println("school click done");
+        elements.Signup_school_name().sendKeys(school);
+        System.out.println("school done");
+        elements.Signup_grade().click();
+        elements.Signup_grade().click();
+        List<WebElement> grade = elements.signup_grade_list();
+        grade.get(4).click();
+        System.out.println("grade select done");
+        elements.Signup_division().click();
+        List<WebElement> div = elements.signup_division_list();
+        div.get(0).click();
+        System.out.println("div select done");
 
+        elements.continue_btn().click();
+    }
+
+    public void child_details_filler_mandatory_partner(String child, String city, String school){
+        elements.Signup_child_name().sendKeys(child);
+        System.out.println("child done");
+        elements.Signup_city_name().sendKeys(city);
+        System.out.println("city done");
+        elements.Signup_title().click();
+        elements.Signup_school_name().click();
+        System.out.println("school click done");
+        elements.Signup_school_name().sendKeys(school);
+        System.out.println("school done");
+        elements.Signup_grade().click();
+        elements.Signup_grade().click();
+        List<WebElement> grade = elements.signup_grade_list();
+        grade.get(4).click();
+        System.out.println("grade select done");
+        elements.Signup_division().click();
+        List<WebElement> div = elements.signup_division_list();
+        div.get(0).click();
+        System.out.println("div select done");
+        elements.continue_btn().click();
+    }
     //Can be used for clearing input field 
     public void clear_field(WebElement field){
         field.sendKeys(Keys.CONTROL, "a", Keys.DELETE); 

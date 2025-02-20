@@ -156,15 +156,30 @@ public class web_elements {
     List<WebElement> signup_grade_list(){
         return driver.findElements(By.cssSelector("[role = 'option']"));
     }
+
+    //Signup page division
+    WebElement Signup_division(){
+    return wait.until(ExpectedConditions.elementToBeClickable(By.id("division-field")));
+    }
+
+    //signup page division list
+    List<WebElement> signup_division_list(){
+        return driver.findElements(By.cssSelector("#division-a"));
+    }
     
     // signup child details continue button 
-    WebElement Signup_child_detail_continue(){
-    return wait.until(ExpectedConditions.elementToBeClickable(By.id("")));
-    }
+    // WebElement Signup_child_detail_continue(){
+    // return wait.until(ExpectedConditions.elementToBeClickable(By.id("")));
+    // }
 
     //free worksheet message
     WebElement free_worksheet(){
     return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[2]/div[1]/div/p/span")));
+    }
+    
+    //Mandatory partner child select popup
+    WebElement mandatory_partner_child_select(){
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("popup-title")));
     }
 
 }
