@@ -4,16 +4,20 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.lang.Thread;
+import java.util.List;
+
 import org.openqa.selenium.interactions.Actions;
 
 public class FormHandler {
 
     private final web_elements elements;
     private final Actions action;
+    private final utils utils;
 
     public FormHandler(WebDriver driver) {
         this.elements = new web_elements(driver); 
         this.action = new Actions(driver);
+        this.utils = new utils();
     }
 
     // Enters login email and pass fields and click continue button
@@ -29,6 +33,24 @@ public class FormHandler {
         elements.Signup_continue_btn().click();
         otp();
         elements.Signup_verify_btn().click();
+    }
+
+    public void child_details_filler(String child, String city, String school){
+        elements.Signup_child_name().sendKeys(child);
+        System.out.println("child done");
+        elements.Signup_city_name().sendKeys(city);
+        System.out.println("city done");
+        elements.Signup_title().click();
+        elements.Signup_school_name().click();
+        System.out.println("school click done");
+        elements.Signup_school_name().sendKeys(school);
+        System.out.println("school done");
+        elements.Signup_grade().click();
+        elements.Signup_grade().click();
+        List<WebElement> grade = elements.signup_grade_list();
+        grade.get(5).click();
+        System.out.println("grade select done");
+        elements.continue_btn().click();
     }
 
     //Can be used for clearing input field 

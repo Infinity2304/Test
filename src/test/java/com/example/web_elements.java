@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+import java.util.List;
 
 public class web_elements {
 
@@ -126,4 +127,44 @@ public class web_elements {
         return wait.until(ExpectedConditions.elementToBeClickable(By.id("verify-btn")));
     }
     
+    //Signup page child name field
+    WebElement Signup_child_name(){
+        return wait.until(ExpectedConditions.elementToBeClickable(By.id("child-name-field")));
+    }
+    
+    //Signup page city name
+    WebElement Signup_city_name(){
+        return wait.until(ExpectedConditions.elementToBeClickable(By.id("city-name-field")));
+    }
+    
+    //signup page title
+    WebElement Signup_title(){
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("popup-title")));
+    }
+
+    //Signup page school name
+    WebElement Signup_school_name(){
+    return wait.until(ExpectedConditions.elementToBeClickable(By.id("school-name-field")));
+    }
+    
+    //Signup page grade
+    WebElement Signup_grade(){
+    return wait.until(ExpectedConditions.elementToBeClickable(By.id("grade-field")));
+    }
+    
+    //signup page grade list
+    List<WebElement> signup_grade_list(){
+        return driver.findElements(By.cssSelector("[role = 'option']"));
+    }
+    
+    // signup child details continue button 
+    WebElement Signup_child_detail_continue(){
+    return wait.until(ExpectedConditions.elementToBeClickable(By.id("")));
+    }
+
+    //free worksheet message
+    WebElement free_worksheet(){
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[2]/div[1]/div/p/span")));
+    }
+
 }
